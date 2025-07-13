@@ -1,0 +1,4 @@
+PostApprovalAPI/bin/
+PostApprovalAPI/obj/
+
+PostApprovalAPI/Migrations/*Snapshot.cs

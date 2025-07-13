@@ -1,0 +1,21 @@
+-posts
+--[HttpPost]:
+    curl -X POST http://localhost:5000/posts \
+    -H "Content-Type: application/json" \
+    -d '{
+    "title": "...",
+    "content": "...",
+    "imageUrl": "...",
+    "createdById": $i
+    }'
+--[HttpGet] : Get 10 latest approved posts
+--[HttpGet("{id}/status")] : Check the status of a specific post
+
+-admin
+--[HttpGet("pending")] : Get all pending posts, displayed within 10 pages
+--[HttpPut("posts/{id}/approve")]:  Approve a post
+--[HttpPut("posts/{id}/reject")]: Reject a post
+    curl -X PUT "http://localhost:5000/admin/posts/$id/reject" \
+    -H "Content-Type: application/json" \
+    -d '{"Reason": "Violates content guidelines."}'
+    
